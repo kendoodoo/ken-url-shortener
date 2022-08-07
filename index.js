@@ -4,7 +4,7 @@
 const express = require('express');
 const { link } = require('fs/promises');
 const mongoose = require('mongoose');
-const router = require('./feature/seeredirect');
+const router = require('./feature/aboutlink');
 const dbhandler = require('./handler/db');
 const app = express();
 
