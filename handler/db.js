@@ -1,14 +1,16 @@
+// import
 const mongoose = require('mongoose');
 
+// insert data sequence
 const shortUrlSchema = new mongoose.Schema({
   redirectto: {
     type: String,
     required: true
   },
+  // remove default because the loop problem
   url: {
     type: String,
-    required: true,
-    default: Math.random().toString(36).slice(2, 7)
+    required: true
   },
   clicks: {
     type: Number,
@@ -21,5 +23,4 @@ const shortUrlSchema = new mongoose.Schema({
     default: 'false'
   }
 })
-
 module.exports = mongoose.model('ShortUrl', shortUrlSchema);
