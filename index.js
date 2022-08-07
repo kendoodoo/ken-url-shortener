@@ -1,28 +1,30 @@
+/* START OF SETTINGS */
+
 // imports
-const { query } = require('express');
-const isEmpty = require('lodash.isempty');
-const socket = require('socket.io');
 const express = require('express');
+const { link } = require('fs/promises');
 const mongoose = require('mongoose');
-const router = require('./handler/feature/seeredirect');
+const router = require('./feature/seeredirect');
 const dbhandler = require('./handler/db');
-const { db } = require('./handler/db');
 const app = express();
 
 // port for server
-const port = 80
+const port = 80;
 
 // connect db
 mongoose.connect('mongodb://localhost/url-shortener', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
-})
+});
 
-// settings
 app.set('view engine', 'ejs');
-app.use('/linkinfo', router)
+app.use('/linkinfo', router);
 app.engine('ejs', require('ejs').__express);
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
+
+/* END OF SETTINGS */
+
+/* START OF FRONT-SITE */
 
 // homepage
 app.get('/', async (req, res) => {
@@ -39,22 +41,33 @@ app.get('/about', async (req, res) => {
 	res.render('about', { numlink: await dbhandler.find().count() });
 })
 
+/* END OF FRONT-SITE */
 
-// host to 
+// the most important things
 app.post('/shorten', async (req, res) => {
+	// set var value if nsfw checkbox on or off
 	var checkernsfw;
 	if (req.body.isnsfw == "on") {
 		var checkernsfw = 'true';
 	} else {
 		var checkernsfw = 'false';
 	}
+	// because if create a second link with same url to redirect, they will go to the first link
+	// fix:
+	// generate random link id
+	const linkidgenerate = Math.random().toString(36).slice(2, 7);
+	// save the linkidgenrate because if the varible got defined it will changed
+	const resultlink = linkidgenerate;
+	// yeah, you know the testing stereotypes
+	console.log(resultlink);
+	// save to database
 	const record = new dbhandler({
 		redirectto: req.body.cut,
-		nsfw: checkernsfw
+		nsfw: checkernsfw,
+		url: resultlink
 	});
     await record.save();
-	const wool = await dbhandler.findOne({ redirectto: req.body.cut });
-	res.render('yourshortlink', { thelink: wool });
+	res.render('yourshortlink', { resultlink });
 })
 
 // redirect
