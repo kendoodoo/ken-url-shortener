@@ -1,0 +1,28 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "the entirely free ultimate url shortener",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jesus"
+  ],
+  "author": "kendoodoo",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "http": "^0.0.1-security",
+    "isempty": "^0.0.1",
+    "lodash.isempty": "^4.4.0",
+    "mongodb": "^4.8.1",
+    "mongoose": "^6.5.1",
+    "mongoose-random": "^0.1.1",
+    "nanoid": "^4.0.0",
+    "shortid": "^2.2.16",
+    "socket.io": "^4.5.1"
+  }
+}

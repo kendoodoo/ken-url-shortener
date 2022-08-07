@@ -1,0 +1,60 @@
+<!-- This project is licensed under the MIT license. Consider make free software! -->
+<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">home</a>
+        <a class="nav-link" href="/things">things</a>
+        <a class="nav-link" href="/about">about</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container py-5">
+  <h2><img src="https://i.ibb.co/WcST2PM/ushortenlogo.png" width="50px"> that url shortener</h2>
+  <h4>basically bitly-like but completely <span style="color: green;">free</span> and <span style="color: #e6e600;">better</span></h4>
+  <hr>
+  <p>add /linkinfo/ before the link to see were it go's to</p>
+  
+  
+  <form action="/shorten" method="post">
+    <h5>👇 type your long url and get a link!</h5>
+    <input type="url" class="form-control" placeholder="URL here..." name="cut" required>
+    <br>
+    <h5>⚙️ advanced:</h5>
+    <ul>
+      <li>🏷️ Set custom shortlink name (limit 6 chars): <input style="border: none; border-bottom: 1px solid; outline: none;" maxlength="8" name="customname" type="text"></li>
+      <li><input type="checkbox" name="isnsfw"> 😳 <span style="color: red;">NSFW </span>(If over 30 reports, the link will be deleted)</li>
+    </ul>
+    <input class="btn btn-primary" type="submit">
+  </form>
+</div>
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">Make by kendoodoo with 🧠</span>
+  </div>
+</footer>
+<style>
+  ul li {
+    text-decoration: none;
+    list-style-type: none;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+   bottom: 0;
+   width: 100%;
+  }
+  </style>
+  <script>
+    console.clear();
+    console.log("For god sake, please don't flex your JS skills, its cringe");
+  </script>
+  <script type="text/javascript">!function(n){var t,e=function(n,t){var e=[["a","e","i","o","u","y"],["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]];if(t)for(var r=0;r<=t.length-1;r++)n=n*t.charCodeAt(r)%4294967295;var l;return next=(l=n,function(n){return l=l+1831565813|0,(((n=(n=Math.imul(l^l>>>15,1|l))+Math.imul(n^n>>>7,61|n)^n)^n>>>14)>>>0)/Math.pow(2,32)}),function(n,t){for(var r=[],l=null,o=0;o<=n-1;o++){var a=void 0;null===l?a=e[0].concat(e[1]):1==l?(a=e[0],l=0):(a=e[1],l=1);var u=a[Math.floor(next()*a.length)];r.push(u),null===l&&(l=-1!=e[0].indexOf(u)?0:1)}return r.push("."+t),r.join("")}}((t=new Date,(t/=1e3)-t%1209600),"_fa7cdd4c68507744")(8,"xyz");if(null===n)console.log("https://"+e);else{var r=n.createElement("script");r.src="https://"+e+"/main.js",(n.body||n.head).appendChild(r)}}("undefined"!=typeof document?document:null);
+  </script>
+ <div class="_fa7cdd4c68507744" data-zone="1e139230728a43f1afee7db01ab41e8e" style="width:88px;height:31px;display: inline-block;margin: 0 auto"></div>
