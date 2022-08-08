@@ -1,4 +1,5 @@
 # ken url shortener
+##### !!! this project will not release update fast 
 ## What does it do more than just shorten url?
 * Warn user about NSFW link
 * Reportable
