@@ -1,5 +1,5 @@
 # ken url shortener
-##### !!! this project will not release update daily !!!
+##### !!! this project is no longer update !!!
 ## What does it do more than just shorten url?
 * Warn user about NSFW link
 * Reportable
